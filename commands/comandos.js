@@ -12,9 +12,9 @@ class Comandos {
             str += `Comando: ${command.comando} \nDescrição: ${command.descricao} \n\n`;
         }
 
-        clientConfig.getClient().on('messageCreate', msg => {
-            if (msg.content === '/comandos') {
-                msg.reply(str);
+        clientConfig.getClient().on('messageCreate', message => {
+            if (message.content === '/comandos') {
+                message.reply(str);
             }
         });
 
