@@ -1,19 +1,11 @@
 require('dotenv/config');
-//initialize dotenv
-const Discord = require('discord.js'); //import discord.js
+const clientConfig = require('./clientConfig');
+const pingPong = require('./commands/pingPong');
+const comandos = require('./commands/comandos');
 
-const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES']}); //create new client
+//Chama execução de login
+clientConfig.login(process.env.CLIENT_TOKEN);
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-
-//make sure this line is the last line
-client.login(process.env.CLIENT_TOKEN); //login bot using token
-
+//Inicia comandos existentes
+pingPong.init();
+comandos.init();
