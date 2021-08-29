@@ -2,7 +2,7 @@ const clientConfig = require('../clientConfig');
 
 class DeleteMessages {
     comando = "/deleteMessages" 
-    descricao = "Ao executar o comando /deleteMessages o bot te responde com as características do seu perfil dentro do servidor."
+    descricao = "Ao executar o comando /deleteMessages {quantidade} o bot deleta as ultimas mensagens do canal de acordo com a quantidade informada."
     init(){
         
         clientConfig.getClient().on('messageCreate', async message => {
@@ -27,11 +27,8 @@ class DeleteMessages {
                     });
                 message.channel.bulkDelete(fetched);
             } 
-            
         });
-       
-
-
+        console.log("DeleteMessages ready!")
     }
 }
 

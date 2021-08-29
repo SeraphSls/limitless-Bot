@@ -3,7 +3,7 @@ const api = require('../services/fortnite.service')
 
 class FortineStatus{
     comando = "/fortniteStatus" 
-    descricao = "Ao executar o comando /fortniteStatus o bot te responde com as estatísticas do seu perfil do fortnite."
+    descricao = "Ao executar o comando /fortniteStatus {nickname} {plataforma : Default = 'epic'} o bot te responde com as estatísticas do seu perfil do fortnite."
     async init(){
         const prefix = '/';
 
