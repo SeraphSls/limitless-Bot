@@ -8,6 +8,8 @@ const perfil = require('./commands/perfil')
 const fortniteNews = require('./commands/fortniteNews')
 const deleteMessage = require('./commands/delete')
 const noCommand = require('./listeners/noCommand.listener')
+const mentioned = require('./listeners/mentioned.listener')
+const music = require('./commands/music')
 
 //Chama execução de login
 clientConfig.login(process.env.CLIENT_TOKEN);
@@ -18,6 +20,7 @@ fortniteStatus.init();
 fortniteNews.init();
 perfil.init();
 deleteMessage.init();
-
+music.init();
 //Inicia Listeners
 noCommand.init();
+mentioned.init();
