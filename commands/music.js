@@ -3,7 +3,7 @@ const player = require('discord-player')
 const voice = require('@discordjs/voice')
 clientConfig.getClient().player = player;
 
-const adapters = new Map<Snowflake, DiscordGatewayAdapterLibraryMethods>();
+//const adapters = new Map<Snowflake, DiscordGatewayAdapterLibraryMethods>();
 
 class Music {
     comando = "/play" 

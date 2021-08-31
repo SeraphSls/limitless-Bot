@@ -27,9 +27,16 @@ class FortineStatus{
                     return message.reply('Informe apenas o Nickname');
                 }
                 const dados = await api.getStats(args[1], args[2])
+                  
+               // message.member.voice.channel.join();
+
                 return message.reply(dados)
+
             }
         });
+
+
+
 
         console.log("FortniteStatus ready!")
     }
