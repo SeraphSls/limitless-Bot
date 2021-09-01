@@ -2,10 +2,10 @@ const clientConfig = require('../clientConfig');
 const api = require('../services/fortnite.service')
 
 class FortineStatus{
-    comando = "/fortniteStatus" 
-    descricao = "Ao executar o comando /fortniteStatus {nickname} {plataforma : Default = 'epic'} o bot te responde com as estatísticas do seu perfil do fortnite."
+    comando = ">fortniteStatus" 
+    descricao = "Ao executar o comando >fortniteStatus {nickname} {plataforma : Default = 'epic'} o bot te responde com as estatísticas do seu perfil do fortnite."
     async init(){
-        const prefix = '/';
+        const prefix = '>';
 
         
         clientConfig.getClient().on('messageCreate', async message  =>  {  

@@ -1,8 +1,8 @@
 const clientConfig = require('../clientConfig');
 const fs = require('fs');
 class Comandos {
-    comando = "/comandos" 
-    descricao = "Ao executar o comando /comandos o bot te responde com uma lista dos comandos existentes."
+    comando = ">comandos" 
+    descricao = "Ao executar o comando >comandos o bot te responde com uma lista dos comandos existentes."
     init(){
         let str = '';
         const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -13,7 +13,7 @@ class Comandos {
         }
 
         clientConfig.getClient().on('messageCreate', message => {
-            if (message.content === '/comandos') {
+            if (message.content === '>comandos') {
                 message.reply(str);
             }
         });

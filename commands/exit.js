@@ -1,8 +1,7 @@
 Discord = require('discord.js');
 const clientConfig = require('../clientConfig');
 const client = clientConfig.getClient()
-const di = require('di4js')
-const connection = di.resolve("connection")
+const connection = clientConfig.getConnection()
 class exit {
     comando = ">exit" 
     descricao = "Ao executar o comando >exit o bot sai do canal de voz."

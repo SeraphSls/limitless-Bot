@@ -4,8 +4,6 @@ const client = new Discord.Client({
     intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES']
 });
 
-const di = require('di4js')
-
 let connect;
 class clientConfig {
   
@@ -14,7 +12,6 @@ class clientConfig {
         client.login(token);
 
         client.on('ready', () => {
-            di.autowired(true).register('connection').as(connect);
             console.log(`Logged in as ${client.user.tag}!`);
         });
     }

@@ -4,8 +4,9 @@ const {
     joinVoiceChannel
 } = require('@discordjs/voice');
 const client = clientConfig.getClient()
-const di = require('di4js')
-const connection = di.resolve("connection")
+const connection = clientConfig.getConnection()
+
+
 class play {
     comando = ">play" 
     descricao = "Ao executar o comando >play o bot toca a música ou playlist informada."

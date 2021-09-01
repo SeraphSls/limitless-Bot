@@ -1,13 +1,13 @@
 const clientConfig = require('../clientConfig');
 
 class DeleteMessages {
-    comando = "/deleteMessages" 
-    descricao = "Ao executar o comando /deleteMessages {quantidade} o bot deleta as ultimas mensagens do canal de acordo com a quantidade informada."
+    comando = ">deleteMessages" 
+    descricao = "Ao executar o comando >deleteMessages {quantidade} o bot deleta as ultimas mensagens do canal de acordo com a quantidade informada."
     init(){
         
         clientConfig.getClient().on('messageCreate', async message => {
             
-            const prefix = '/';
+            const prefix = '>';
             if (!message.content.startsWith(prefix)){
                 return;
             }
