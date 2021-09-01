@@ -1,38 +1,35 @@
 Discord = require('discord.js');
-const {
-    joinVoiceChannel
-} = require('@discordjs/voice');
+
 const client = new Discord.Client({
     intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_VOICE_STATES']
 });
+
+const di = require('di4js')
+
+let connect;
 class clientConfig {
+  
     //Executa login
     login(token) {
         client.login(token);
 
         client.on('ready', () => {
+            di.autowired(true).register('connection').as(connect);
             console.log(`Logged in as ${client.user.tag}!`);
-        });
-
-        client.on('messageCreate', message => {
-            if (message.content === '/music') {
-                const channel = message.member.voice.channel
-                if(channel == null){
-                    message.reply("Necessário estar em um canal de voz!")   
-                }else{
-                    connection = joinVoiceChannel({
-                        channelId: channel.id,
-                        guildId: channel.guildId,
-                        adapterCreator: channel.guild.voiceAdapterCreator,
-                    });
-                }
-            }
         });
     }
 
     //Retorna client para uso externo
     getClient() {
         return client;
+    }
+
+    getConnection(){
+        return connect;
+    }
+
+    setConnection(connection){
+        connect = connection;
     }
 }
 
