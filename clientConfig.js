@@ -14,31 +14,21 @@ class clientConfig {
             console.log(`Logged in as ${client.user.tag}!`);
         });
 
-        client.on('ready', () => {
-            const channel = client.channels.cache.get("235447698533253121");
-                                                      
-                                                       
-            console.log(channel);
-
-            const connection = joinVoiceChannel({
-                channelId: channel.id,
-                guildId: channel.guildId,
-                adapterCreator: channel.guild.voiceAdapterCreator,
-                
-            });
-
-            //connection.joinVoiceChannel();
-            // client.join().then(connec => {
-            console.log("batata");
-            //})
-
+        client.on('messageCreate', message => {
+            if (message.content === '/music') {
+                const channel = message.member.voice.channel
+                if(channel == null){
+                    message.reply("Necessário estar em um canal de voz!")   
+                }else{
+                    connection = joinVoiceChannel({
+                        channelId: channel.id,
+                        guildId: channel.guildId,
+                        adapterCreator: channel.guild.voiceAdapterCreator,
+                    });
+                }
+            }
         });
-
     }
-
-
-
-
 
     //Retorna client para uso externo
     getClient() {
