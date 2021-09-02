@@ -26,6 +26,7 @@ class play {
                         guildId: channel.guildId,
                         adapterCreator: channel.guild.voiceAdapterCreator,
                     });
+                    clientConfig.setConnection(connection);
                 }
             }
         });
