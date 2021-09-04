@@ -27,7 +27,8 @@ const {
 
 const client = clientConfig.getClient()
 const connection = clientConfig.getConnection()
-let queue = clientConfig.getQueue
+
+
 class play {
     comando = ">play"
     descricao = "Ao executar o comando >play o bot toca a música ou playlist informada."
