@@ -23,7 +23,7 @@ perfil.init();
 deleteMessage.init();
 play.init()
 exit.init()
-next.init();
+//next.init();
 
 //Inicia Listeners
 noCommand.init();

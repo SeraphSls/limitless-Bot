@@ -27,7 +27,7 @@ const {
 
 const client = clientConfig.getClient()
 const connection = clientConfig.getConnection()
-
+let queue = clientConfig.getQueue()
 
 class play {
     comando = ">play"
@@ -63,7 +63,7 @@ class play {
                     if(!query.includes('.com')){
                         query = query + ' lyrics';
                     }
-                    console.log(query)
+                    
                     const searchResult = await play
                         .search(query, {
                         requestedBy: message.member,
@@ -71,7 +71,7 @@ class play {
                         })
                         .catch(() => {});
                     
-                    if(queue.length < 1){    
+                    if(!queue){    
                         queue = await play.createQueue(channel.guild, {
                             metadata: channel,
                         });
@@ -87,7 +87,7 @@ class play {
 
                     queue.addTrack(searchResult.tracks[0]);
                     message.reply(`Música ${searchResult.tracks[0]} adicionada na fila meu paladino!`)
-                    console.log(queue.playing)
+                    
                     if (!queue.playing) {
                         queue.play();
                     }
