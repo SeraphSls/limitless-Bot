@@ -11,6 +11,7 @@ const noCommand = require('./listeners/noCommands.listener')
 const mentioned = require('./listeners/mentioned.listener')
 const play = require('./commands/play')
 const exit = require('./commands/exit')
+const next = require('./commands/next')
 //Chama execução de login
 clientConfig.login(process.env.CLIENT_TOKEN);
 
@@ -22,6 +23,8 @@ perfil.init();
 deleteMessage.init();
 play.init()
 exit.init()
+next.init();
+
 //Inicia Listeners
 noCommand.init();
 mentioned.init();
