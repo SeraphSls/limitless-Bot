@@ -62,7 +62,7 @@ class play {
                     if(!query.includes('.com')){
                         query = query + ' lyrics';
                     }
-                  
+                    console.log(query)
                     const searchResult = await play
                         .search(query, {
                         requestedBy: message.member,
