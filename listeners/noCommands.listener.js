@@ -6,7 +6,7 @@ class NoCommand {
             if(message.content.includes('/deleteMessages')){ return }
             if (message.content.startsWith('-') || message.content.startsWith('/') || message.content.startsWith('!') || message.content.startsWith('>')){
                 
-                if(!message.channel.name.toLowerCase().includes('command' || 'comman')) {
+                if(!message.channel.name.toLowerCase().includes('comand' || 'comman')) {
                     const fetched = await message.channel.messages.fetch({
                         limit: 2,
                         });

@@ -6,25 +6,17 @@ const client = new Discord.Client({
 });
 
 let connect;
+let queue;
 class clientConfig {
 
     //Executa login
     login(token) {
         client.login(token);
 
-
-        console.log(client);
-
         client.on('ready', () => {
             console.log(`Logged in as ${client.user.tag}!`);
         });
     }
-
-
-
-
-
-
 
     //Retorna client para uso externo
     getClient() {
@@ -37,6 +29,14 @@ class clientConfig {
 
     setConnection(connection) {
         connect = connection;
+    }
+
+    getQueue(){
+        return queue;
+    }
+
+    setQueue(){
+        queue = queue;
     }
 }
 
