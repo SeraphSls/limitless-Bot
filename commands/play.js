@@ -23,7 +23,7 @@ const {
 const client = clientConfig.getClient()
 const connection = clientConfig.getConnection()
 
-const resource = createAudioResource('D:/limitless-Bot/file/venom.mp3');
+const resource = createAudioResource('D:/limitless-Bot/music/venom.mp3');
 
 
 
