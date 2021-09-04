@@ -18,6 +18,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.0",
     "nodemon": "^2.0.12",
     "opusscript": "^0.0.8"
   }
