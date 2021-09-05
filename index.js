@@ -33,7 +33,7 @@ mentioned.init();
 
 app.get('/', function(req, res) {
     res.send('hello world');
-}).listen(process.env.PORT || 5000);
+}).listen(process.env.PORT);
 
 app.get('/favicon.ico', function(req, res) {
     res.send('hello world');
