@@ -1,4 +1,5 @@
 require('dotenv/config');
+var app = express();
 
 const clientConfig = require('./clientConfig');
 
@@ -29,3 +30,11 @@ exit.init()
 //Inicia Listeners
 noCommand.init();
 mentioned.init();
+
+app.get('/', function(req, res) {
+    res.send('hello world');
+});
+
+app.get('/favicon.ico', function(req, res) {
+    res.send('hello world');
+});
