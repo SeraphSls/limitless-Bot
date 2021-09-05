@@ -8,22 +8,6 @@ const {
     joinVoiceChannel
 } = require('@discordjs/voice');
 
-const {
-    createAudioPlayer
-} = require('@discordjs/voice');
-
-const {
-    createAudioResource,
-    NoSubscriberBehavior
-} = require('@discordjs/voice');
-
-const {
-    AudioPlayerStatus
-} = require('@discordjs/voice');
-
-const {
-    VoiceConnectionStatus
-} = require('@discordjs/voice');
 
 const client = clientConfig.getClient()
 const connection = clientConfig.getConnection()
