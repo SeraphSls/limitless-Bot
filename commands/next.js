@@ -3,7 +3,7 @@ const clientConfig = require('../clientConfig');
 
 const client = clientConfig.getClient()
 const connection = clientConfig.getConnection()
-let queue = clientConfig.getQueue
+let queue = clientConfig.getQueue()
 class next {
     comando = ">next"
     descricao = "Ao executar o comando >next o bot toca a próxima musica da fila."
@@ -13,6 +13,7 @@ class next {
             if (message.content.includes('>')) {
                 
                 queue.skip();
+                queue.play();
                 clientConfig.setConnection(connection);
                 clientConfig.setQueue(queue);
             }
