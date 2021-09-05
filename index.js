@@ -22,6 +22,7 @@ fortniteNews.init();
 perfil.init();
 deleteMessage.init();
 play.init()
+
 exit.init()
 //next.init();
 
