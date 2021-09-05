@@ -22,7 +22,7 @@ class play {
             const cmd = message.content
             let query = cmd.substring(6, cmd.length)
             
-            if (message.content.includes('>play')) {
+            if (message.content.toLowerCase().includes('>play')) {
                 
                 if(query.length < 1){
                     message.reply("Favor informar uma música, link ou playlist")

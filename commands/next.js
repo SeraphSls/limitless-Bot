@@ -14,6 +14,7 @@ class next {
                 
                 console.log(queue);
                 queue.skip();
+                queue.play();
                 clientConfig.setConnection(connection);
                 clientConfig.setQueue(queue);
             }
